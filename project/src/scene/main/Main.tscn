@@ -1,0 +1,100 @@
+[gd_scene load_steps=12 format=2]
+
+[ext_resource path="res://project/src/scene/main/style/PlayBtnTheme.tres" type="Theme" id=1]
+[ext_resource path="res://project/src/scene/main/Main.gd" type="Script" id=2]
+[ext_resource path="res://project/src/scene/main/sprite/logo.png" type="Texture" id=3]
+[ext_resource path="res://project/src/style/font/Dogfiles.ttf" type="DynamicFontData" id=4]
+[ext_resource path="res://project/src/scene/background/Bg.tscn" type="PackedScene" id=5]
+[ext_resource path="res://project/src/common/safe-area/safe-area-n2d/SafeAreaN2D.tscn" type="PackedScene" id=6]
+[ext_resource path="res://project/src/scene/main/style/GuideBtnTheme.tres" type="Theme" id=7]
+
+[sub_resource type="DynamicFont" id=3]
+size = 100
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 100
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 100
+font_data = ExtResource( 4 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 80
+font_data = ExtResource( 4 )
+
+[node name="Main" type="Node2D"]
+script = ExtResource( 2 )
+
+[node name="Bg" parent="." instance=ExtResource( 5 )]
+
+[node name="SafeAreaN2D" parent="." instance=ExtResource( 6 )]
+
+[node name="GameName" type="Label" parent="SafeAreaN2D"]
+margin_left = 80.0
+margin_top = 200.0
+margin_right = 1000.0
+margin_bottom = 294.0
+rect_pivot_offset = Vector2( 677, 94 )
+custom_colors/font_color = Color( 1, 0.388235, 0.278431, 1 )
+custom_fonts/font = SubResource( 3 )
+text = "Doge The Creeps"
+align = 1
+valign = 1
+
+[node name="Logo" type="TextureRect" parent="SafeAreaN2D"]
+margin_left = 280.0
+margin_top = 400.0
+margin_right = 780.0
+margin_bottom = 900.0
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 6
+
+[node name="PlayBtn" type="Button" parent="SafeAreaN2D"]
+margin_left = 357.0
+margin_top = 1300.0
+margin_right = 757.0
+margin_bottom = 1500.0
+theme = ExtResource( 1 )
+custom_colors/font_color = Color( 1, 1, 1, 1 )
+custom_fonts/font = SubResource( 2 )
+text = "Play"
+
+[node name="GuideBtn" type="Button" parent="SafeAreaN2D"]
+margin_left = 357.0
+margin_top = 1600.0
+margin_right = 757.0
+margin_bottom = 1800.0
+theme = ExtResource( 7 )
+custom_colors/font_color = Color( 1, 0.388235, 0.278431, 1 )
+custom_fonts/font = SubResource( 5 )
+text = "Guide"
+
+[node name="HighScore" type="Label" parent="SafeAreaN2D"]
+margin_left = 88.0
+margin_top = 1000.0
+margin_right = 1008.0
+margin_bottom = 1094.0
+rect_pivot_offset = Vector2( 677, 94 )
+custom_colors/font_color = Color( 1, 0.388235, 0.278431, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "High Score"
+align = 1
+valign = 1
+
+[node name="HighScoreValue" type="Label" parent="SafeAreaN2D"]
+margin_left = 88.0
+margin_top = 1100.0
+margin_right = 1008.0
+margin_bottom = 1194.0
+rect_pivot_offset = Vector2( 677, 94 )
+custom_colors/font_color = Color( 1, 0.388235, 0.278431, 1 )
+custom_fonts/font = SubResource( 4 )
+text = "0"
+align = 1
+valign = 1
+
+[connection signal="pressed" from="SafeAreaN2D/PlayBtn" to="." method="to_level_1"]
+[connection signal="pressed" from="SafeAreaN2D/GuideBtn" to="." method="to_guide"]

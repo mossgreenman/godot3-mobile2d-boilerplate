@@ -1,0 +1,10 @@
+[gd_scene format=2]
+
+[node name="GameViewport" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2( 540, 960 )
+
+[node name="Viewport" type="Viewport" parent="."]
+size = Vector2( 1920, 1080 )
+own_world = true
