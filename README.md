@@ -15,4 +15,4 @@ Doge The Creeps is free software. You can redistribute it and/or modify it under
 terms of the GNU General Public License.
 
 ## Contributing
-If you want to contribute to this project, feel free contact me at mossgreenman6698@gmail.com
+If you want to contribute to this project, feel free contact me via <a href="mailto:mossgreenman6698@gmail.com">mossgreenman6698@gmail.com</a>
