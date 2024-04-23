@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://project/src/scenes/ads-adr/AdsAdr.gd" type="Script" id=1]
+[ext_resource path="res://project/src/common/ads-adr/AdsAdr.gd" type="Script" id=1]
 [ext_resource path="res://admob-lib/admob.gd" type="Script" id=2]
 
 [node name="AdsAdr" type="Node2D"]
